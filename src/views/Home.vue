@@ -2,8 +2,14 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/img/logo.png">
     <h1>Home</h1>
-    
+    <h2>{{ msg }}</h2>
+
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <div class="btn">button</div>
+    <div class="btn">button</div>
+    <div class="btn">button</div>
+    <div class="btn">button</div>
+    <div class="btn">button</div>
   </div>
 </template>
 
