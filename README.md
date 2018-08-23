@@ -20,3 +20,8 @@ yarn run build
 ```
 yarn run lint
 ```
+
+### Creates single file component
+```
+node createVue FileName
+```
