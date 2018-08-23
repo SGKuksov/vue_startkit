@@ -1,4 +1,5 @@
-# vue_test
+# vue_startkit
+[![devDependencies Status](https://david-dm.org/SGKuksov/vue_startkit/dev-status.svg)](https://david-dm.org/SGKuksov/vue_startkit?type=dev) [![dependencies Status](https://david-dm.org/SGKuksov/vue_startkit/status.svg)](https://david-dm.org/SGKuksov/vue_startkit)
 
 ## Project setup
 ```

@@ -1,13 +1,22 @@
 {
-  "name": "vue_test",
-  "version": "0.1.0",
+  "name": "vue_startkit",
+  "version": "0.2.0",
+  "description": "Template for a new Vue for App project.",
+  "main": "main.js",
   "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SGKuksov/vue_startkit.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap-vue": "^2.0.0-rc.11",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -16,12 +25,16 @@
     "@vue/cli-plugin-babel": "^3.0.0",
     "@vue/cli-plugin-eslint": "^3.0.0",
     "@vue/cli-service": "^3.0.0",
-    "bootstrap": "^4.1.3",
+    "css-mqpacker": "^7.0.0",
+    "lodash": "^4.17.10",
     "node-sass": "^4.9.3",
     "path": "^0.12.7",
+    "postcss-inline-svg": "^3.1.1",
+    "postcss-object-fit-images": "^1.1.2",
+    "postcss-svgo": "^4.0.0",
     "sass-loader": "^7.1.0",
     "style-resources-loader": "^1.2.1",
-    "svg-inline-loader": "^0.8.0",
+    "svg4everybody": "^2.1.9",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
@@ -40,7 +53,11 @@
   },
   "postcss": {
     "plugins": {
-      "autoprefixer": {}
+      "autoprefixer": {},
+      "css-mqpacker": {},
+      "postcss-object-fit-images": {},
+      "postcss-inline-svg": {},
+      "postcss-svgo": {}
     }
   },
   "browserslist": [
