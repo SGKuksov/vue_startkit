@@ -32,44 +32,72 @@ if(blockName) {
         let fileContent = `
 <template>
   <div class="${blockName}">
-    <h1 class="${blockName}__title">I'm data: {{ title }}</h1>
-    <p class="${blockName}__text">I'm props: {{ msg }}</p>
-    <button @click="${blockName}Event">
+    <h1 class="${blockName}__title">
+      Hello, ${blockName}
+    </h1>
+    <h2 class="${blockName}__subtitle">
+      I'm data: {{ dataTitle }}
+    </h2>
+    <p class="${blockName}__text">
+      I'm props: {{ msg }}
+    </p>
+    <span class="${blockName}__like">
+      I'm computed: {{ fixedLikes }}
+    </span>
+    <button class="${blockName}__btn"
+            @click="${blockName}Event">
       Нажми на кнопку
     </button>
   </div>
 </template>
 
 <script>
-// import axios from 'axios'; // Подключение axios
-// import _ from 'lodash' // Подключение lodash
+// import axios from 'axios';               // Подключение axios
+// import _ from 'lodash'                   // Подключение lodash
 
 // @ is an alias to /src
 // import ${blockName} from '@/components/${blockName}.vue' // Подключение компонентов
+
 // <${blockName} 
-//   msg="Welcome to Your Vue.js App" // Входящий параметр msg
-//   @${blockName}-event="someEventFunction" // Исходящее событие с передачей параметра this.eventData
-//   :is="currentTabComponent" // Динамическое переключение компонентов
+//   msg="Welcome to Your Vue.js App"       // Входящий параметр msg - статичная строка
+//   :title="someTitle"                     // Входящий параметр title - переменная со строкой
+//   :likes="countLikes"                    // Входящий параметр likes - переменная со числом или можно передать число
+//   :isPublished="false"                   // Указание входного параметра без значения будет означать true
+//   :commentIds="[234, 266, 273]"          // Входящий параметр commentIds - массив или можно передать переменной
+//   :author="{key: 'val', key1: 'val1'}"   // Входящий параметр author - объект или можно передать переменной
+//   @${blockName}-event="someEventFunction"// Исходящее событие с передачей параметра this.dataEvent
+//   :is="currentTabComponent"              // Динамическое переключение компонентов
 // />
 
 export default {
   name: '${blockName}',
+  // inheritAttrs: false,                   // Запрет на наследование атрибутов. v-bind="$attrs" вы можете вручную определять к какому элементу должны применяться атрибуты (подробнее: https://clck.ru/EBfJv)
   components: {
-    // ${blockName} // Регистрация компонентов
+    // ${blockName}                         // Регистрация компонентов
+  },
+  props: {                                  // Регистрация входящего параметра
+    msg: String,
+    propstitle: String,
+    likes: Number,
+    isPublished: Boolean,
+    commentIds: Array,
+    author: Object,
+    // о валидации входных параметров можно узнать тут https://clck.ru/EBewF
   },
   data () {
     return {
-      info: null,
-      title: 'Hello, ${blockName}',
-      eventData: [], // в данном случае статичные данные которые вернуться из компонента
+      dataEvent: [],                        // Статичные данные которые вернуться из компонента
+      dataTitle: this.propstitle,           // Входящие данные переданы во внутреннюю переменную компонента. 1й вариант Не изменяемости входящих данных
     }
   },
-  props: {
-    msg: String // Регистрация входящего параметра
-  },
   methods: {
-    ${blockName}Event: function () {
-      this.$emit('${blockName}-event', this.eventData)
+    ${blockName}Event() {
+      this.$emit('${blockName}-event', this.dataEvent)
+    }
+  },
+  computed: {
+    fixedLikes() {                          // Входящие данные переданы в вычисляемое свойство компонента. 2й вариант Не изменяемости входящих данных
+      return this.likes.toFixed()
     }
   },
 }
@@ -80,7 +108,10 @@ export default {
   .${blockName} {
 
     &__title {}
+    &__subtitle {}
     &__text {}
+    &__like {}
+    &__btn {}
   }
 </style>`; // будущий контент файла
 
