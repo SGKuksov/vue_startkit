@@ -1,6 +1,7 @@
 'use strict';
 
 // Требует node.js и пакета mkdirp
+// Вызов командой node createVue FileName
 
 const fs = require('fs');                // будем работать с файловой системой
 const mkdirp = require('mkdirp');        // зависимость, должна быть установлена (см. описание выше)
