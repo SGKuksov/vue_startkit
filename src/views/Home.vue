@@ -1,17 +1,11 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/img/logo.png">
-    <h1>Home</h1>
+    <h1>This is an home page</h1>
     <h2>{{ msg }}</h2>
-
     <p>{{ info }}</p>
 
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <div class="btn btn-primary">button</div>
-    <div class="btn btn-primary">button</div>
-    <div class="btn btn-primary">button</div>
-    <div class="btn btn-primary">button</div>
-    <div class="btn btn-primary">button</div>
   </div>
 </template>
 
@@ -19,7 +13,7 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import axios from 'axios';
-import _ from 'lodash'
+// import _ from 'lodash'
 
 
 export default {
@@ -40,7 +34,7 @@ export default {
       // .catch(error => console.log(error)); // обработка ошибок
   },
   created() {
-    console.log(this.$_.isEmpty(null));
+    // console.log(this.$_.isEmpty(null));
   }
 }
 </script>

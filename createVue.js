@@ -31,8 +31,9 @@ if(blockName) {
         let fileContent = `
 <template>
   <div class="${blockName}">
-    <h1 class="${blockName}__title">{{ msg }}</h1>
-    <p class="${blockName}__text">{{ msg }}</p>
+    <h1 class="${blockName}__title">{{ title }}</h1>
+    <p class="${blockName}__text">I'm props: {{ msg }}</p>
+    
   </div>
 </template>
 
@@ -47,11 +48,13 @@ export default {
   components: {
     // ${blockName} // Регистрация компонентов
   },
+  props: {
+    msg: String
+  },
   data () {
     return {
       info: null,
       title: 'Hello, ${blockName}',
-      msg: 'Lorem ipsum'
     }
   },
 }
