@@ -31,30 +31,44 @@ if(blockName) {
         let fileContent = `
 <template>
   <div class="${blockName}">
-    <h1 class="${blockName}__title">{{ title }}</h1>
+    <h1 class="${blockName}__title">I'm data: {{ title }}</h1>
     <p class="${blockName}__text">I'm props: {{ msg }}</p>
-    
+    <button @click="${blockName}Event">
+      Нажми на кнопку
+    </button>
   </div>
 </template>
 
 <script>
 // import axios from 'axios'; // Подключение axios
 // import _ from 'lodash' // Подключение lodash
+
 // @ is an alias to /src
 // import ${blockName} from '@/components/${blockName}.vue' // Подключение компонентов
+// <${blockName} 
+//   msg="Welcome to Your Vue.js App" // Входящий параметр msg
+//   @${blockName}-event="someEventFunction" // Исходящее событие с передачей параметра this.eventData
+//   :is="currentTabComponent" // Динамическое переключение компонентов
+// />
 
 export default {
   name: '${blockName}',
   components: {
     // ${blockName} // Регистрация компонентов
   },
-  props: {
-    msg: String
-  },
   data () {
     return {
       info: null,
       title: 'Hello, ${blockName}',
+      eventData: [], // в данном случае статичные данные которые вернуться из компонента
+    }
+  },
+  props: {
+    msg: String // Регистрация входящего параметра
+  },
+  methods: {
+    ${blockName}Event: function () {
+      this.$emit('${blockName}-event', this.eventData)
     }
   },
 }

@@ -4,14 +4,10 @@
     <h1>This is an home page</h1>
     <h2>{{ msg }}</h2>
     <p>{{ info }}</p>
-
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 import axios from 'axios';
 // import _ from 'lodash'
 
@@ -19,7 +15,7 @@ import axios from 'axios';
 export default {
   name: 'home',
   components: {
-    // HelloWorld
+
   },
   data () {
     return {
