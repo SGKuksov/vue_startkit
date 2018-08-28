@@ -2,6 +2,8 @@
 // Это диспетчер подключений, тут не должно быть ничего, кроме импортов
 // ~ or node_modules/
 
+// инлайнинг svg, пример: background: svg-load('../img/svg/example.svg', fill=#fff, stroke=#f00);
+
 @import 'variables';
 @import 'fonts';
 @import 'global';

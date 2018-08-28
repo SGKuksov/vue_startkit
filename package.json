@@ -28,7 +28,6 @@
     "css-mqpacker": "^7.0.0",
     "lodash": "^4.17.10",
     "node-sass": "^4.9.3",
-    "path": "^0.12.7",
     "postcss-inline-svg": "^3.1.1",
     "postcss-object-fit-images": "^1.1.2",
     "postcss-svgo": "^4.0.0",
